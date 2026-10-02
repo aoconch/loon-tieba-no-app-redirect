@@ -32,7 +32,7 @@
 
 ## 文件说明
 
-- `tieba-no-app-redirect.plugin` — Loon 插件本体（含 `[Mitm]` + `[Script]` 配置）。
+- `tieba-no-app-redirect.plugin` — Loon 插件本体（Loon 官方 `#!` 元信息 + 小写 `[mitm]`/`[script]` 段）。
 - `tieba_no_app_redirect.loon.js` — 插件引用的拦截脚本（已固定到 commit SHA，绕开 CDN 缓存）。
 - `tieba_no_app_redirect.loon.conf` — 等价的 Loon 配置片段，供手动合并参考。
 

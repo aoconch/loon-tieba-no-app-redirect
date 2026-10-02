@@ -1,11 +1,10 @@
-[Plugin]
-name = 贴吧防跳转 (Tieba No App Redirect)
-desc = 阻止手机浏览器访问百度贴吧吧页时跳转到 App 安装/打开页面。在请求发出前把带 obj_locate 分流参数的贴吧地址改写回干净的吧页，服务端直接返回网页版，避免 302 跳转。需开启 MITM 并在手机上信任 Loon 证书。
-author = aoconch
-version = 1.0
+#!name = 贴吧防跳转 (Tieba No App Redirect)
+#!desc = 阻止手机浏览器访问百度贴吧吧页时跳转到 App 安装/打开页面。在请求发出前把带 obj_locate 分流参数的贴吧地址改写回干净的吧页，服务端直接返回网页版，避免 302 跳转。需开启 MITM 并在手机上信任 Loon 证书。
+#!author = aoconch
+#!homepage = https://github.com/aoconch/loon-tieba-no-app-redirect
 
-[Mitm]
+[mitm]
 hostname = %APPEND% tieba.baidu.com
 
-[Script]
+[script]
 http-request ^https?:\/\/tieba\.baidu\.com\/(f|mo\/q\/activityDiversion\/download|h5activity\/download)\?.*$ script-path=https://cdn.jsdelivr.net/gh/aoconch/loon-tieba-no-app-redirect@6ba75b0293d3e6c9b95c6c9bca85fe20adc4c2e3/tieba_no_app_redirect.loon.js, requires-body=false, tag=贴吧防跳转, enable=true
